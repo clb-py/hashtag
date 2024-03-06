@@ -1,9 +1,9 @@
 
 
-import pyautogui
+import pyautogui as _
 import time
 
-pyautogui.PAUSE = .5
+_.PAUSE = .5
 
 time.sleep( 5 )
-print( pyautogui.position() )
+print( _.position() )

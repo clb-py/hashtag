@@ -20,42 +20,41 @@
 
  """
 
-import pyautogui
+import pyautogui as _
 import pandas
 import time
 
-pag = pyautogui
-# pag.extend( pyautogui )
+# _.extend( pyautogui )
 
-pag.PAUSE = .5
+_.PAUSE = .5
 
 empresa = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
 user = "email@email.com"
 pwd = "gr5df165s1"
 
-pag.press( "win" )
-pag.write( "chrome" )
-pag.press( "enter" )
+_.press( "win" )
+_.write( "chrome" )
+_.press( "enter" )
 
 time.sleep( 3 )
-pag.click( x = 681, y = 431 )
+_.click( x = 681, y = 431 )
 
 time.sleep( 2 )
-pag.hotkey( "ctrl", "t" )
-pag.write( empresa )
-pag.press( "enter" )
+_.hotkey( "ctrl", "t" )
+_.write( empresa )
+_.press( "enter" )
 
 time.sleep( 3 )
-pag.press( "tab" )
-pag.write( user )
-pag.press( "tab" )
-pag.write( pwd )
-pag.press( "enter" )
+_.press( "tab" )
+_.write( user )
+_.press( "tab" )
+_.write( pwd )
+_.press( "enter" )
 time.sleep( 3 )
 
 tabela = pandas.read_csv( "produtos.csv" )
 print( tabela )
-pag.press( "tab" )
+_.press( "tab" )
 
 for linha in tabela.index:
    codigo = tabela.loc[ linha, "codigo" ]
@@ -65,36 +64,36 @@ for linha in tabela.index:
    preco_unitario = str( tabela.loc[ linha, "preco_unitario" ] )
    custo = str( tabela.loc[ linha, "custo" ] )
    obs = tabela.loc[ linha, "obs" ]
-   pag.PAUSE = 0
+   _.PAUSE = 0
 
-   pag.write( codigo )
+   _.write( codigo )
 
-   pag.press( "tab" )
-   pag.write( marca )
+   _.press( "tab" )
+   _.write( marca )
 
-   pag.press( "tab" )
-   pag.write( tipo )
+   _.press( "tab" )
+   _.write( tipo )
 
-   pag.press( "tab" )
-   pag.write( categoria )
+   _.press( "tab" )
+   _.write( categoria )
 
-   pag.press( "tab" )
-   pag.write( preco_unitario )
+   _.press( "tab" )
+   _.write( preco_unitario )
 
-   pag.press( "tab" )
-   pag.write( custo )
+   _.press( "tab" )
+   _.write( custo )
 
-   pag.press( "tab" )
+   _.press( "tab" )
    if not pandas.isna( obs ):
-      pag.write( obs )
+      _.write( obs )
    else:
       print( "" )
 
-   pag.press( "enter" )
-   pag.hotkey( "shift", "tab" )
-   pag.hotkey( "shift", "tab" )
-   pag.hotkey( "shift", "tab" )
-   pag.hotkey( "shift", "tab" )
-   pag.hotkey( "shift", "tab" )
-   pag.hotkey( "shift", "tab" )
-   # pag.scroll( 5000 )
+   _.press( "enter" )
+   _.hotkey( "shift", "tab" )
+   _.hotkey( "shift", "tab" )
+   _.hotkey( "shift", "tab" )
+   _.hotkey( "shift", "tab" )
+   _.hotkey( "shift", "tab" )
+   _.hotkey( "shift", "tab" )
+   # _.scroll( 5000 )
