@@ -37,7 +37,7 @@ _.write( "chrome" )
 _.press( "enter" )
 
 time.sleep( 3 )
-_.click( x = 681, y = 431 )
+_.click( 681, 431 )
 
 time.sleep( 2 )
 _.hotkey( "ctrl", "t" )
